@@ -1,0 +1,38 @@
+<script type="text/x-red" data-help-name="luxtronik2">
+    <p>Reads and controls heat pumps based on the Luxtronik 2.0 contol unit.</p>
+    <p>Connect your unit via lan and configure the ip parameters at your unit.</p>
+    <p>Every incoming message to the Luxtronik2 node sends a message with all readable values from the pump.</p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('luxtronik2',{
+        category: 'input',
+        color: 'BurlyWood',
+        defaults: {
+            name: {value:""},
+            ip: {value:"192.168.1.100"},
+            port: {value:"8888"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "db.png",
+        label: function() {
+            return this.name||"luxtronik2";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="luxtronik2">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-ip"><i class="icon-tag"></i> IP</label>
+        <input type="text" id="node-input-ip" placeholder="IP">
+    </div>
+    <div class="form-row">
+        <label for="node-input-port"><i class="icon-tag"></i> Port</label>
+        <input type="text" id="node-input-port" placeholder="Port">
+    </div>
+</script>

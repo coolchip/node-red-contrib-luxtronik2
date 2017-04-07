@@ -1,0 +1,37 @@
+{
+  "name": "node-red-contrib-luxtronik2",
+  "version": "0.0.1",
+  "description": "Node, that reads and controls heat pumps based on the Luxtronik 2.0 contol unit. Supports for example AlphaInnotec and Siemens Novelan (WRP NET).",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "luxtronik2": "^0.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coolchip/node-red-contrib-luxtronik2.git"
+  },
+  "keywords": [
+    "node-red",
+    "luxtronik",
+    "luxtronik2",
+    "alpha",
+    "innotec",
+    "novelan"
+  ],
+  "node-red": {
+    "nodes": {
+      "luxtronik2": "index.js"
+     }
+  },
+  "author": "Sebastian B.",
+  "license": "MIT",
+  "email": "coolchip@gmx.de",
+  "bugs": {
+    "url": "https://github.com/coolchip/node-red-contrib-luxtronik2/issues"
+  },
+  "homepage": "https://github.com/coolchip/node-red-contrib-luxtronik2#readme"
+}
