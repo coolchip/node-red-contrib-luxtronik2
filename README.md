@@ -1,7 +1,22 @@
-# node-red-contrib-luxtronik2
+## node-red-contrib-luxtronik2
+[![npm version](https://badge.fury.io/js/node-red-contrib-luxtronik2.svg)](https://badge.fury.io/js/node-red-contrib-luxtronik2)
+[![Dependency Status](https://david-dm.org/coolchip/node-red-contrib-luxtronik2.svg)](https://david-dm.org/coolchip/node-red-contrib-luxtronik2)
+[![licence](https://img.shields.io/npm/l/express.svg)](https://www.npmjs.com/package/node-red-contrib-luxtronik2)
+#### Node-RED Node, that reads heat pumps based on the Luxtronik 2.0 contol unit. Supports for example Alpha Innotec or Siemens Novelan (WRP NET).
 
-Node-RED Node, that reads heat pumps based on the Luxtronik 2.0 contol unit. Supports for example AlphaInnotec and Siemens Novelan (WRP NET).
+This work depends on based on the [luxtronik2 Node.js module](https://github.com/coolchip/luxtronik2).
 
-Connect your unit via lan and configure the ip parameters at your unit.
+### Install
+Just run
+```
+    npm install node-red-contrib-luxtronik2
+```
 
-Every incoming message to the Luxtronik2 node sends a message with all readable values from the pump.
+### How to use
+
+Connect your unit via lan and configure the ip parameters at your unit. The port number of your unit is 8888 by default. Place the new Luxtronik2 node at your flow and start reading.
+
+### Example
+<pre>
+[{"id":"55761f32.81b66","type":"luxtronik2","z":"58f83f17.8d781","name":"","ip":"192.168.178.22","port":"8888","x":460,"y":400,"wires":[["294e49ea.47ce96"]]},{"id":"2be68b81.81e9a4","type":"inject","z":"58f83f17.8d781","name":"","topic":"","payload":"","payloadType":"date","repeat":"","crontab":"","once":false,"x":260,"y":400,"wires":[["55761f32.81b66"]]},{"id":"294e49ea.47ce96","type":"debug","z":"58f83f17.8d781","name":"","active":true,"console":"false","complete":"false","x":670,"y":400,"wires":[]}]
+</pre>
