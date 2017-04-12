@@ -14,10 +14,10 @@ Just run
 ```
 
 ### How to use
-
 Connect your unit via lan and configure the ip parameters at your unit. The port number of your unit is 8888 by default. Place the new Luxtronik2 node at your flow and start reading.
+Every incoming message to the Luxtronik2 node sends a message with all readable values from the pump.
 
 ### Example
-<pre>
-[{"id":"55761f32.81b66","type":"luxtronik2","z":"58f83f17.8d781","name":"","ip":"192.168.178.22","port":"8888","x":460,"y":400,"wires":[["294e49ea.47ce96"]]},{"id":"2be68b81.81e9a4","type":"inject","z":"58f83f17.8d781","name":"","topic":"","payload":"","payloadType":"date","repeat":"","crontab":"","once":false,"x":260,"y":400,"wires":[["55761f32.81b66"]]},{"id":"294e49ea.47ce96","type":"debug","z":"58f83f17.8d781","name":"","active":true,"console":"false","complete":"false","x":670,"y":400,"wires":[]}]
-</pre>
+```text
+[{"id":"55761f32.81b66","type":"luxtronik2","z":"58f83f17.8d781","name":"","ip":"192.168.0.20","port":"8888","x":460,"y":400,"wires":[["294e49ea.47ce96"]]},{"id":"2be68b81.81e9a4","type":"inject","z":"58f83f17.8d781","name":"","topic":"","payload":"","payloadType":"date","repeat":"","crontab":"","once":false,"x":260,"y":400,"wires":[["55761f32.81b66"]]},{"id":"294e49ea.47ce96","type":"debug","z":"58f83f17.8d781","name":"","active":true,"console":"false","complete":"false","x":670,"y":400,"wires":[]}]
+```
