@@ -2,6 +2,7 @@
 [![npm version](https://badge.fury.io/js/node-red-contrib-luxtronik2.svg)](https://badge.fury.io/js/node-red-contrib-luxtronik2)
 [![Dependency Status](https://david-dm.org/coolchip/node-red-contrib-luxtronik2.svg)](https://david-dm.org/coolchip/node-red-contrib-luxtronik2)
 [![licence](https://img.shields.io/npm/l/express.svg)](https://www.npmjs.com/package/node-red-contrib-luxtronik2)
+
 #### Node-RED Node, that reads heat pumps based on the Luxtronik 2.0 contol unit. Supports for example Alpha Innotec or Siemens Novelan (WRP NET).
 
 This work depends on based on the [luxtronik2 Node.js module](https://github.com/coolchip/luxtronik2).
