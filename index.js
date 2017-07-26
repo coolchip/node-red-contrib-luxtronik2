@@ -6,7 +6,7 @@ module.exports = function (RED) {
     function Luxtronik2ReadNode(config) {
         RED.nodes.createNode(this, config);
         var node = this;
-        var pump = new luxtronik(config.ip, config.port);
+        var pump = new luxtronik(config.host, config.port);
 
         node.on('input', function (msg) {
             pump.read(function (data) {
@@ -20,7 +20,7 @@ module.exports = function (RED) {
     function Luxtronik2WriteNode(config) {
         RED.nodes.createNode(this, config);
         var node = this;
-        var pump = new luxtronik(config.ip, config.port);
+        var pump = new luxtronik(config.host, config.port);
 
         node.on('input', function (msg) {
             var parameterName = config.parameter;
