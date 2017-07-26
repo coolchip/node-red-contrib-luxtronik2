@@ -1,28 +1,38 @@
+module.exports = function (RED) {
+    "use strict";
 
-module.exports = function(RED) {
-	"use strict";
-	
     var luxtronik = require('luxtronik2');
 
-
-    function ReadLuxtronik2(node,config,msg,callback) {
-        var pump = new luxtronik(config.ip, config.port);
-        pump.read(false, function (data) {
-            callback(data);
-        });
-    }
-
-	function Luxtronik2QueryNode(config) {
-        RED.nodes.createNode(this,config);
+    function Luxtronik2ReadNode(config) {
+        RED.nodes.createNode(this, config);
         var node = this;
+        var pump = new luxtronik(config.ip, config.port);
 
-        this.on ('input', function(msg) {
-            ReadLuxtronik2(node, config, msg, function(data){
-				msg.payload = data;
+        node.on('input', function (msg) {
+            pump.read(function (data) {
+                msg.payload = data;
                 node.send(msg);
             });
         });
-	}
+    }
+    RED.nodes.registerType("luxtronik2 read", Luxtronik2ReadNode);
 
-    RED.nodes.registerType("luxtronik2",Luxtronik2QueryNode);
+    function Luxtronik2WriteNode(config) {
+        RED.nodes.createNode(this, config);
+        var node = this;
+        var pump = new luxtronik(config.ip, config.port);
+
+        node.on('input', function (msg) {
+            var parameterName = config.parameter;
+            if (parameterName === 'msg_topic') {
+                parameterName = msg.topic;
+            }
+            var realValue = msg.payload;
+            pump.write(parameterName, realValue, function (data) {
+                msg.payload = data.msg;
+                node.send(msg);
+            });
+        });
+    }
+    RED.nodes.registerType("luxtronik2 write", Luxtronik2WriteNode);
 }
