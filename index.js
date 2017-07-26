@@ -6,10 +6,14 @@ module.exports = function (RED) {
     function Luxtronik2ReadNode(config) {
         RED.nodes.createNode(this, config);
         var node = this;
-        var pump = new luxtronik(config.host, config.port);
+        var pump = luxtronik.createConnection(config.host, config.port);
 
         node.on('input', function (msg) {
-            pump.read(function (data) {
+            pump.read(function (err, data) {
+                if (err) {
+                    msg.payload = err;
+                    return node.send(msg);
+                }
                 msg.payload = data;
                 node.send(msg);
             });
@@ -20,7 +24,7 @@ module.exports = function (RED) {
     function Luxtronik2WriteNode(config) {
         RED.nodes.createNode(this, config);
         var node = this;
-        var pump = new luxtronik(config.host, config.port);
+        var pump = luxtronik.createConnection(config.host, config.port);
 
         node.on('input', function (msg) {
             var parameterName = config.parameter;
@@ -28,8 +32,12 @@ module.exports = function (RED) {
                 parameterName = msg.topic;
             }
             var realValue = msg.payload;
-            pump.write(parameterName, realValue, function (data) {
-                msg.payload = data.msg;
+            pump.write(parameterName, realValue, function (err, data) {
+                if (err) {
+                    msg.payload = err;
+                    return node.send(msg);
+                }
+                msg.payload = data;
                 node.send(msg);
             });
         });

@@ -4,11 +4,10 @@
   "description": "Node, that reads and controls heat pumps based on the Luxtronik 2.0 contol unit. Supports for example AlphaInnotec and Siemens Novelan (WRP NET).",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "dependencies": {
-    "luxtronik2": "^0.1.2"
+    "luxtronik2": "^1.0.0"
   },
   "repository": {
     "type": "git",
