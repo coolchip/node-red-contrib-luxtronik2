@@ -27,10 +27,7 @@ module.exports = function (RED) {
         var pump = luxtronik.createConnection(config.host, config.port);
 
         node.on('input', function (msg) {
-            var parameterName = config.parameter;
-            if (parameterName === 'msg_topic') {
-                parameterName = msg.topic;
-            }
+            var parameterName = config.parameter || msg.parameter;
             var realValue = msg.payload;
             pump.write(parameterName, realValue, function (err, data) {
                 if (err) {
