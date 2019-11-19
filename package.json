@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-luxtronik2",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Node, that reads and controls heat pumps based on the Luxtronik 2.0 contol unit. Supports for example AlphaInnotec and Siemens Novelan (WRP NET).",
   "main": "index.js",
   "scripts": {
