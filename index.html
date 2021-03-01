@@ -15,8 +15,8 @@
 
 <script type="text/x-red" data-help-name="luxtronik2 read">
     <p>Reads heat pumps based on the Luxtronik 2.0 contol unit.</p>
-    <p>Connect your unit via lan and configure the ip parameters at your unit.</p>
-    <p>Every incoming message to the Luxtronik2 node you get a message with all readable values from the pump.</p>
+    <p>Connect your unit via LAN and configure the IP address parameters at your unit.</p>
+    <p>Every incoming message to the Luxtronik2 node you get a message with all readable values from the heat pump.</p>
 </script>
 
 <script type="text/javascript">
@@ -76,7 +76,7 @@
 
 <script type="text/x-red" data-help-name="luxtronik2 write">
     <p>Controls heat pumps based on the Luxtronik 2.0 contol unit.</p>
-    <p>Connect your unit via lan and configure the ip parameters at your unit.</p>
+    <p>Connect your unit via LAN and configure the IP address parameters at your unit.</p>
     <h3>Inputs</h3>
     <dl class="message-properties">
        <dt>payload <span class="property-type">string | number</span></dt>
@@ -96,6 +96,13 @@
           <li>'cooling_start'</li>
           <li>'cooling_stop'</li>
           </ul>
+       </dd>
+       <dt class="optional">raw_parameter <span class="property-type">number</span></dt>
+       <dd> Use RAW write operation to heat pump by passing the heat pump parameter directly as number
+            via <code>msg.raw_parameter</code>.
+            The config option 'parameter' or <code>msg.parameter</code> is ignored in this case.
+            The RAW parameter value must be provided via <code>msg.payload</code>.
+            Attention: No automatic parameter format conversions are done in this mode.
        </dd>
     </dl>
 </script>

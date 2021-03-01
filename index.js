@@ -28,15 +28,28 @@ module.exports = function (RED) {
 
         node.on('input', function (msg) {
             var parameterName = config.parameter || msg.parameter;
-            var realValue = msg.payload;
-            pump.write(parameterName, realValue, function (err, data) {
-                if (err) {
-                    msg.payload = err;
-                    return node.send(msg);
-                }
-                msg.payload = data;
-                node.send(msg);
-            });
+            var parameterValue = msg.payload;
+            var rawParameterNumber = msg.raw_parameter;
+
+            if(rawParameterNumber !== undefined) {
+                pump.writeRaw(rawParameterNumber, parameterValue, function (err, data) {
+                    if (err) {
+                        node.error(err, msg);
+                    } else {
+                        msg.payload = data;
+                        node.send(msg);
+                    }
+                });
+            } else {
+                pump.write(parameterName, parameterValue, function (err, data) {
+                        if (err) {
+                            msg.payload = err;
+                            return node.send(msg);
+                        }
+                        msg.payload = data;
+                        node.send(msg);
+                    });
+            }
         });
     }
     RED.nodes.registerType("luxtronik2 write", Luxtronik2WriteNode);
