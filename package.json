@@ -7,7 +7,7 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "luxtronik2": "^2.3.1"
+    "luxtronik2": "^2.4.0"
   },
   "repository": {
     "type": "git",
