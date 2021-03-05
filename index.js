@@ -29,10 +29,10 @@ module.exports = function (RED) {
         node.on('input', function (msg) {
             var parameterName = config.parameter || msg.parameter;
             var parameterValue = msg.payload;
-            var rawParameterNumber = msg.raw_parameter;
+            var rawParameter = msg.raw_parameter;
 
-            if(rawParameterNumber !== undefined) {
-                pump.writeRaw(rawParameterNumber, parameterValue, function (err, data) {
+            if(rawParameter !== undefined) {
+                pump.writeRaw(rawParameter, parameterValue, function (err, data) {
                     if (err) {
                         node.error(err, msg);
                     } else {
