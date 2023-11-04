@@ -54,17 +54,31 @@
         <label for="node-input-parameter"><i class="fa fa-fish"></i> Parameter</label>
         <select type="text" id="node-input-parameter">
             <option value=""></option>
-            <option value="heating_target_temperature">Heating target</option>
-            <option value="warmwater_target_temperature">Warmwater target</option>
-            <option value="heating_operation_mode">Heating operation</option>
-            <option value="warmwater_operation_mode">Warmwater operation</option>
-            <option value="hotwater_temperature_hysteresis">Hotwater temperature hysteresis</option>
-            <option value="return_temperature_hysteresis">Return temperature hysteresis</option>
-            <option value="cooling_operation_mode">Cooling operation</option>
-            <option value="cooling_release_temp">Cooling release</option>
-            <option value="cooling_inlet_temp">Cooling inlet</option>
-            <option value="cooling_start">Cooling start</option>
-            <option value="cooling_stop">Cooling stop</option>
+            <option value="heating_target_temperature">Heating target temperature (1)</option>
+            <option value="warmwater_target_temperature">Warmwater target temperature (2)</option>
+            <option value="heating_operation_mode">Heating operation mode (3)</option>
+            <option value="warmwater_operation_mode">Warmwater operation mode (4)</option>
+            <option value="heating_curve_end_point">Heatingcurve endpoint (11)</option>
+            <option value="heating_curve_parallel_offset">Heatingcurve parallel offset (12)</option>
+            <option value="deltaHeatingReduction">Delta Heating reduction (13)</option>
+            <option value="mk1_curve_end_point">MK1 curve endpoint (14)</option>
+            <option value="mk1_curve_parallel_offset">MK1 curve parallel offset (15)</option>
+            <option value="deltaMk1Reduction">MK1 curve Heating reduction (16)</option>
+            <option value="hotwater_temperature_hysteresis">Hotwater temperature hysteresis (74)</option>
+            <option value="return_temperature_hysteresis">Return temperature hysteresis (88)</option>
+            <option value="heating_temperature_outside_2nd_compressor">Heating temperature outside 2nd compressor (95)</option>
+            <option value="hotwater_temperature_forerun_2nd_compressor">Hot water temperature forerun 2nd compressor (96)</option>
+            <option value="temperature_hot_water_target">Hot water target temperature (105)</option>
+            <option value="cooling_operation_mode">Cooling operation mode (108)</option>
+            <option value="cooling_release_temp">Cooling release temperature (110)</option>
+            <option value="cooling_inlet_temp">Cooling inlet temperature (132)</option>
+            <option value="runDeaerate">run Dearate (158)</option>
+            <option value="hotWaterCircPumpDeaerate">Hot water circulation pump Dearate (684)</option>
+            <option value="solarPumpDeaerate">Solar pump Dearate (688)</option>
+            <option value="cooling_start">Cooling start (850)</option>
+            <option value="cooling_stop">Cooling stop (851)</option>
+            <option value="heating_system_circ_pump_voltage_nominal">Heating System circulation pump voltage nominal (867)</option>
+            <option value="heating_system_circ_pump_voltage_minimal">Heating System circulation pump voltage minimal (868)</option>
         </select>
     </div>
     <div class="form-row">
@@ -90,11 +104,21 @@
           <li>'warmwater_operation_mode'</li>
           <li>'heating_curve_end_point'</li>
           <li>'heating_curve_parallel_offset'</li>
+          <li>'deltaHeatingReduction'</li>
+          <li>'mk1_curve_end_point'</li>
+          <li>'mk1_curve_parallel_offset'</li>
+          <li>'deltaMk1Reduction'</li>
           <li>'hotwater_temperature_hysteresis'</li>
           <li>'return_temperature_hysteresis'</li>
+          <li>'heating_temperature_outside_2nd_compressor'</li>
+          <li>'hotwater_temperature_forerun_2nd_compressor'</li>
+          <li>'temperature_hot_water_target'</li>
           <li>'cooling_operation_mode'</li>
           <li>'cooling_release_temp'</li>
           <li>'cooling_inlet_temp'</li>
+          <li>'runDeaerate'</li>
+          <li>'hotWaterCircPumpDeaerate'</li>
+          <li>'solarPumpDeaerate'</li>
           <li>'cooling_start'</li>
           <li>'cooling_stop'</li>
           <li>'heating_system_circ_pump_voltage_nominal'</li>
